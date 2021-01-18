@@ -1,0 +1,136 @@
+/*Geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background-color: #eee;
+}
+/*Header*/
+header {
+    width: 100%;
+    height: 150px;
+    color: #fff;
+    background: linear-gradient(-41deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+}
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+header h1 {
+    text-align: center;
+    padding-top: 30px;
+    color: #ffffff;
+}
+/*Section Balance*/
+#balance {
+    max-width: 50%;
+    margin: auto;
+    position: relative;
+    top: -50px;
+}
+#balance .sub-title {
+    font-size: 1.2em;
+    padding: 0 0 5px 15px;
+    color: #fff
+}
+#balance .card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#balance .card:last-child {
+    color: #fff;
+    background-color: #099e09;
+}
+#balance .card:last-child h3 {
+    color: #fff;
+}
+#balance .card h3 {
+    font-weight: 600;
+    font-size: 0.75em;
+    color: #131313;
+    padding: 10px 0 0 15px;
+}
+#balance .card p {
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+}
+
+/*Section transaction*/
+#transaction {
+    max-width: 50%;
+    margin: auto;
+}
+#transaction .sub-title {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+#transaction #data-table {
+    width: 100%;
+    border-spacing: 0 0.5em;
+}
+#transaction #data-table tbody tr{
+    background-color: #fff;
+    font-size: 1em;
+    opacity: 0.6;
+}
+#transaction #data-table tr td {
+    padding: 1rem 2rem;
+    font-size: 1em;
+    border-spacing: 0;
+    font-weight: normal;
+}
+#transaction #data-table tr td:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+#transaction #data-table tr td:last-child {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+#transaction #data-table tbody tr:hover  {
+    opacity: 1;
+}
+@media only screen and (max-width: 780px) {
+    #balance {
+        max-width: 70%;
+        margin: auto;
+        position: relative;
+        top: -50px;
+    }
+    #transaction {
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+    #transaction .sub-title {
+        margin-left: 1rem;
+    }
+    #transaction #data-table tr td{
+        width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+}
+/*Footer*/
+footer {
+    text-align: center;
+}
+footer h5 {
+    padding: 50px;
+}
