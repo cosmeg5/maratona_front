@@ -71,7 +71,7 @@ header h1 {
     z-index: 1;
     display: none;
 }
-#balance .card:last-child img {
+.card:last-child img {
     float: right;
     width: 30px;
     position: relative;
@@ -136,6 +136,9 @@ header h1 {
         position: relative;
         top: -50px;
     }
+.card:last-child img {
+    width: 30px;
+}
     #transaction {
         max-width: 100%;
         margin: 0.5rem;
