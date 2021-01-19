@@ -47,6 +47,7 @@ header h1 {
     color: #fff
 }
 #balance .card {
+    text-align: left;
     width: 100%;
     background-color: #fff;
     border-radius: 5px;
@@ -59,6 +60,28 @@ header h1 {
 #balance .card:last-child h3 {
     color: #fff;
 }
+#balance .card:last-child p {
+    position: relative;
+    left: 10px;
+    z-index: 0;
+}
+#balance .card:last-child input {
+    float: right;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
+}
+#balance .card:last-child img {
+    float: right;
+    width: 30px;
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+#check:checked ~ #saldo{
+    visibility: hidden;
+}
 #balance .card h3 {
     font-weight: 600;
     font-size: 0.75em;
@@ -68,7 +91,7 @@ header h1 {
 #balance .card p {
     font-weight: 600;
     font-size: 1.5em;
-    text-align: center;
+    text-align: left;
     padding: 10px;
 }
 
@@ -121,7 +144,6 @@ header h1 {
         margin-left: 1rem;
     }
     #transaction #data-table tr td{
-        width: 100%;
         width: 100%;
         margin: 0;
         padding: 10px;
