@@ -94,7 +94,12 @@ header h1 {
     text-align: left;
     padding: 10px;
 }
-
+.saida {
+    color: red;
+}
+.entrada {
+    color: blue;
+}
 /*Section transaction*/
 #transaction {
     max-width: 50%;
