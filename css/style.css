@@ -8,6 +8,60 @@
 body {
     background-color: #eee;
 }
+html {
+    font-size: 93.75%;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 1px solid red;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+/*Links e Buttons*/
+a {
+    color: #49aa26;
+    text-decoration: none;
+}
+a:hover {
+    color: #3dd705
+}
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+button {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    border: none;
+    background-color: #49aa26;
+    padding: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #3dd705;
+}
+.button.cansel {
+    width: 100%;
+    height: 50px;
+    color: #e92929;
+    border: 2px solid #e92929;
+    background-color: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 0.25rem;
+}
+.button.cansel:hover {
+    color: #e47f7f;
+    border: 2px solid #e47f7f;
+}
 /*Header*/
 header {
     width: 100%;
@@ -29,10 +83,11 @@ header {
         background-position: 0 50%;
     }
 }
-header h1 {
+header {
     text-align: center;
+}
+#logo {
     padding-top: 30px;
-    color: #ffffff;
 }
 /*Section Balance*/
 #balance {
@@ -40,11 +95,6 @@ header h1 {
     margin: auto;
     position: relative;
     top: -50px;
-}
-#balance .sub-title {
-    font-size: 1.2em;
-    padding: 0 0 5px 15px;
-    color: #fff
 }
 #balance .card {
     text-align: left;
@@ -62,22 +112,20 @@ header h1 {
 }
 #balance .card:last-child p {
     position: relative;
-    left: 10px;
-    z-index: 0;
 }
 #balance .card:last-child input {
     float: right;
     cursor: pointer;
-    z-index: 1;
     display: none;
 }
-.card:last-child img {
+.card:last-child label {
     float: right;
     width: 30px;
     position: relative;
-    right: 20px;
+    float: right;
     cursor: pointer;
     z-index: 1;
+    margin-right: 20px;
 }
 #check:checked ~ #saldo{
     visibility: hidden;
@@ -87,6 +135,9 @@ header h1 {
     font-size: 0.75em;
     color: #131313;
     padding: 10px 0 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 #balance .card p {
     font-weight: 600;
@@ -134,6 +185,19 @@ header h1 {
 #transaction #data-table tbody tr:hover  {
     opacity: 1;
 }
+#transaction #data-table tbody td img {
+    cursor: pointer;
+} 
+@media only screen and (min-width: 781px) {
+    html {
+        font-size: 87.5%;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
 @media only screen and (max-width: 780px) {
     #balance {
         max-width: 70%;
@@ -141,9 +205,9 @@ header h1 {
         position: relative;
         top: -50px;
     }
-.card:last-child img {
-    width: 30px;
-}
+    .card:last-child img {
+        width: 30px;
+    }
     #transaction {
         max-width: 100%;
         margin: 0.5rem;
@@ -151,11 +215,64 @@ header h1 {
     #transaction .sub-title {
         margin-left: 1rem;
     }
+
     #transaction #data-table tr td{
         width: 100%;
-        margin: 0;
+        margin: auto;
         padding: 10px;
     }
+}
+/*Estilo Modal */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+.modal {
+    background-color: #f0f2f5;
+    padding: 2.4rem;
+    position: relative;
+    z-index: 1;
+}
+#form {
+    max-width: 500px;
+}
+#form h2 {
+    margin-top: 0;
+}
+#form form input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+.input-group {
+    margin-top: 0.8rem;
+}
+.input-group small {
+    opacity: 0.4;
+}
+.input-group.actions {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+}
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+    text-align: center;
 }
 /*Footer*/
 footer {

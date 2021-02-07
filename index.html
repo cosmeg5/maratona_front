@@ -8,59 +8,85 @@
 </head>
 <body>
     <header>
-        <h1 id="logo">Dev finance</h1>
+        <img src="assets/logo.svg" alt="Logo" id="logo" />
     </header>
     <main>
         <section id="balance">
-            <h2 class="sub-title">Balanço</h2>
+            <h2 class="sr-only">Balanço</h2>
 
             <div class="card"> 
-                <h3>Entradas</h3>
-                <p>R$5.000,00</p>
+                <h3>
+                    <span>Entradas</span>
+                    <img src="assets/income.svg" alt="imagem de entrada"/>
+                </h3>
+                <p id="entradaDisplay">R$0,00</p>
             </div> 
             <div class="card"> 
-                <h3>Saidas</h3>
-                <p>R$2.000,00</p>
+                <h3>
+                    <span>Saidas</span>
+                    <img src="assets/expense.svg" alt="iamgem de saida"/>
+                </h3>
+                <p id="saidaDisplay">R$0,00</p>
             </div>
             <div class="card">
-                <h3>Total</h3>
+                <h3>
+                    <span>Total</span>
+                    <img src="assets/total.svg" alt="imagem do total"/>
+                </h3>
                 <input  id="check" type="checkbox"/>
-                <label for="check"><img src="img/klipartz.com.png" alt="view-saldo" class="btn-view" width="30px"/></label>
-                <p id="saldo">R$3.000,00</p>
+                <label for="check"><img id="ver-saldo"src="assets/klipartz.com.png" alt="view-saldo" class="btn-view" width="30px"/></label>
+                <p id="saldo">R$0,00</p>
             </div>
         </section>
         <section id="transaction">
-            <h2 class="sub-title">Transações</h2>
+            <h2 class="sr-only">Transações</h2>
+
+            <a href="#" class="button new" id="newtransaction">+ Nova Transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
+                        <th></th>
                     </tr>
                 </thead>        
                 <tbody>
-                    <tr>
-                        <td>Luz</td>
-                        <td class="saida">-R$ 500,00</td>
-                        <td>23/01/2021</td>
-                    </tr>
-                    <tr>
-                        <td>Criação de Website</td>
-                        <td class="entrada">R$ 5.000,00</td>
-                        <td>24/01/2021</td>
-                    </tr>
-                    <tr>
-                        <td>Aluguel</td>
-                        <td class="saida">-R$ 3.000,00</td>
-                        <td>26/01/2021</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
     </main>
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova Transação</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input id="description" name="description" type="text" placeholder="Descrição" />
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input id="amount" name="amounht" step="0.01" type="number" placeholder="0,00" />
+                        <small class="help">Use sinal -(negativo) para despesas e ,(vírgula) para casas decimais</small>
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Data</label>
+                        <input id="date" name="date" type="date" />
+                    </div>
+                    <div class="input-group actions">
+                        <a href="#" class="button cansel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
     <footer>
         <h5>dev.finance$</h5>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
