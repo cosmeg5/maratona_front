@@ -261,6 +261,14 @@ header {
 .input-group {
     margin-top: 0.8rem;
 }
+#divida {
+    float:right;
+    position: relative;
+    margin-top: -38px;
+    width: 4rem;
+    height: 2.5rem;
+    background-color: red;
+}
 .input-group small {
     opacity: 0.4;
 }

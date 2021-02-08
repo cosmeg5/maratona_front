@@ -128,7 +128,7 @@ const Utils = {
        })
 
        return signal + value;
-    }
+    },
 }
 
 const Form = {
@@ -143,14 +143,17 @@ const Form = {
             date: Form.date.value,
         }
     },
-   
-    formatData() {
-
-    },
     close() {
         var active = document.querySelector('.modal-overlay');
         active.classList.remove("active");   
     },
+
+    negativar() {
+        let { amount } = Form.getValues();
+        let valorNegativo = "-" + amount;
+        return Form.amount.value = valorNegativo
+    },
+
 
     validateFields() {
         const { description, amount, date} = Form.getValues();
