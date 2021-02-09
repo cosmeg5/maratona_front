@@ -14,6 +14,7 @@ cansel.addEventListener("click", function() {
     active.classList.remove("active");   
 })
 
+
 const Storage = {
     get() {
         return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
@@ -37,6 +38,24 @@ const Transaction = {
         Transaction.all.splice(index, 1);
 
         App.reload();
+    },
+
+    order() {
+    Transaction.all.forEach(function(transactions, index) {
+        DOM.addTransaction(transactions, index);
+    })
+    Transaction.all.sort((transactions, index) => {
+        let valorA = transactions.date.split("/").reverse().join();
+        let valorB = index.date.split("/").reverse().join();
+        if(valorA < valorB) {
+            console.log(valorB)
+            return 1
+        } else {
+            return -1
+        }
+    })
+        App.reload()
+   
     },
 
     incomes() {
@@ -205,7 +224,7 @@ const App = {
         Transaction.all.forEach(function(transactions, index) {
             DOM.addTransaction(transactions, index);
         })
-        
+
         DOM.updateBalance();
 
         Storage.set(Transaction.all)

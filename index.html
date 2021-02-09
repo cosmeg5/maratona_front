@@ -42,13 +42,17 @@
             <h2 class="sr-only">Transações</h2>
 
             <a href="#" class="button new" id="newtransaction">+ Nova Transação</a>
+           <!-- <form class="form-pesquisa">
+                <input type="text" class="pesquisa" id="input-pesquisa"/>
+                <button type="button" class="divida" onclick="serach()">Pesquisar</button>
+            </form>-->
             <table id="data-table">
                 <thead>
                     <tr>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
-                        <th></th>
+                        <th><label for="ordenar">Ordernar</label> <img src="assets/order.png" id="ordenar" name="ordenar" width="35px" onclick="Transaction.order()" /></th>
                     </tr>
                 </thead>        
                 <tbody>
@@ -69,7 +73,7 @@
                     <div class="input-group">
                         <label class="sr-only" for="amount">Valor</label>
                         <input id="amount" name="amounht" step="0.01" type="number" placeholder="0,00" />
-                        <button id="divida" type="button" onclick="Form.negativar()">Despesa</button>
+                        <button class="divida" type="button" onclick="Form.negativar()">Despesa</button>
                         <small class="help">Use o botão para para despesas e , (vírgula) para casas decimais</small>
                     </div>
                     <div class="input-group">
