@@ -115,9 +115,18 @@ const DOM = {
         Transaction.all.filter( (search) => {
             if(search.description == pesquisa || search.date == pesquisa) {
                 DOM.addTransaction(search) 
-                console.log(search)
+                const retorno = document.querySelector(".retorno");
+                retorno.innerHTML = `<div class="container">
+                                    <button type="button" class="limpar" id="btnLimpar" onclick="App.clearSearch()">Limpar</button>
+                                    </div>`;
                 return search
-            } 
+            }  else {
+                const retorno = document.querySelector(".retorno");
+                retorno.innerHTML = `<div class="container">
+                                        <h3 id="msgLimpar">Busca vazia ou não foi encontrado</h3>
+                                        <button type="button" class="limpar" id="btnLimpar" onclick="App.clearSearch()">Limpar</button>
+                                    </div>`;
+            }
         });
     },
 
@@ -245,6 +254,14 @@ const App = {
     filter() {    
         DOM.clearTransaction();
         DOM.filtrar()   
+    },
+    clearSearch() {
+        const btnLimpar = document.querySelector("#btnLimpar")
+        btnLimpar.classList.add("activeNone")
+        const msgLimpar = document.querySelector("#msgLimpar")
+        msgLimpar.classList.add("activeNone")
+        DOM.clearTransaction();
+        App.init();
     }
 }
 

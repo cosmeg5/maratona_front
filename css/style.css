@@ -37,13 +37,22 @@ a:hover {
     margin-bottom: .8rem;
 }
 .pesquisa {
+    padding: 10px;
     float: right;
     height:2.7rem;
     margin-top: -37px;
     border: none;
 }
  .divida {
-    width: 5rem;
+    float:right;
+    position: relative;
+    margin-top: -39px;
+    width: 4rem;
+    height: 40px;
+    background-color: red;
+}
+.limpar {
+    width: 200px;
 }
 button {
     width: 100%;
@@ -71,6 +80,14 @@ button:hover {
 .button.cansel:hover {
     color: #e47f7f;
     border: 2px solid #e47f7f;
+}
+.container {
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.activeNone {
+    display: none;
 }
 /*Header*/
 header {
@@ -281,9 +298,8 @@ header {
 .divida {
     float:right;
     position: relative;
-    margin-top: -37px;
+    margin-top: -39px;
     width: 4rem;
-    height: 2.6rem;
     background-color: red;
 }
 .input-group small {
@@ -301,8 +317,9 @@ header {
 }
 /*Footer*/
 footer {
+    margin-top: 20px;
     text-align: center;
 }
 footer h5 {
-    padding: 50px;
+    padding: 20px;
 }
