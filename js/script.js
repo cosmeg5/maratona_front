@@ -41,14 +41,11 @@ const Transaction = {
     },
 
     order() {
-    Transaction.all.forEach(function(transactions, index) {
-        DOM.addTransaction(transactions, index);
-    })
+
     Transaction.all.sort((transactions, index) => {
         let valorA = transactions.date.split("/").reverse().join();
         let valorB = index.date.split("/").reverse().join();
         if(valorA < valorB) {
-            console.log(valorB)
             return 1
         } else {
             return -1
@@ -110,6 +107,18 @@ const DOM = {
             </td>`; 
 
             return html;
+    },
+
+    filtrar() {
+        
+        let pesquisa = document.querySelector("#input-pesquisa").value;
+        Transaction.all.filter( (search) => {
+            if(search.description == pesquisa || search.date == pesquisa) {
+                DOM.addTransaction(search) 
+                console.log(search)
+                return search
+            } 
+        });
     },
 
     updateBalance() {
@@ -233,6 +242,10 @@ const App = {
         DOM.clearTransaction();
         App.init();
     },
+    filter() {    
+        DOM.clearTransaction();
+        DOM.filtrar()   
+    }
 }
 
 App.init();

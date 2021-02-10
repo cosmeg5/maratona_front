@@ -40,12 +40,13 @@
         </section>
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
-
-            <a href="#" class="button new" id="newtransaction">+ Nova Transação</a>
-           <!-- <form class="form-pesquisa">
-                <input type="text" class="pesquisa" id="input-pesquisa"/>
-                <button type="button" class="divida" onclick="serach()">Pesquisar</button>
-            </form>-->
+            <div class="new-search">
+                <a href="#" class="button new" id="newtransaction">+ Nova Transação</a>
+                <form class="form-pesquisa">
+                    <input type="text" class="pesquisa" id="input-pesquisa"/>
+                    <button type="button" class="divida" onclick="App.filter()">Pesquisar</button>
+                </form>
+            </div>  
             <table id="data-table">
                 <thead>
                     <tr>

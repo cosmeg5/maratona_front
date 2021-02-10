@@ -42,7 +42,7 @@ a:hover {
     margin-top: -37px;
     border: none;
 }
-.form-pesquisa .divida {
+ .divida {
     width: 5rem;
 }
 button {
@@ -221,6 +221,9 @@ header {
     }
     .card:last-child img {
         width: 30px;
+    }
+    #newtransaction {
+        margin-bottom: 50px;
     }
     #transaction {
         max-width: 100%;
